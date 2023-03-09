@@ -8,7 +8,8 @@ class CustomTextFormField extends StatelessWidget {
   final bool? autoFocus;
   final String? hintText;
   final Icon? suffixIcon;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<String>? onChanged;
+  final FormFieldSetter<String>? onSaved;
 
   const CustomTextFormField({
     super.key,
@@ -18,7 +19,8 @@ class CustomTextFormField extends StatelessWidget {
     this.autoFocus,
     this.hintText,
     this.suffixIcon,
-    required this.onChanged,
+    this.onChanged,
+    this.onSaved,
   });
 
   @override
@@ -39,6 +41,7 @@ class CustomTextFormField extends StatelessWidget {
         const SizedBox(height: 8.0),
         TextFormField(
           onChanged: onChanged,
+          onSaved: onSaved,
           onTapOutside: (_) => FocusScope.of(context).unfocus(),
           keyboardType: keyboardType ?? TextInputType.text,
           obscureText: obscureText ?? false,

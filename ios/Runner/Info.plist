@@ -49,5 +49,12 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsLocalNetworking</key>
+			<true/>
+			<key>NSAllowsArbitaryLoadsInWebContent</key>
+			<true/>
+		</dict>
 	</dict>
 </plist>
